@@ -6,7 +6,9 @@ package lab02_aswinthsinnathamby;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -28,9 +30,23 @@ public class Lab02_AswinthSinnathamby extends Application {
         
         Scene scene = new Scene(root, 250, 300);
         
+        VBox middle = new VBox();
+        
+        Label top = new Label("Random Game");
+        Label bottom = new Label("Waiting...");
+        Label lblImage = new Label();
+        
+        root.setTop(top);
+        root.setBottom(bottom);
+        middle.getChildren().add(lblImage);
+        
+        root.setCenter(middle);
+        
+        
         primaryStage.setScene(scene);
         primaryStage.setTitle("Java Games");
         primaryStage.show();
+        
     }
     
 }
