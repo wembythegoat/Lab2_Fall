@@ -10,6 +10,9 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.image.*;
+import java.util.Random;
+import javafx.geometry.Pos;
 
 /**
  *
@@ -34,7 +37,7 @@ public class Lab02_AswinthSinnathamby extends Application {
         
         Label top = new Label("Random Game");
         Label bottom = new Label("Waiting...");
-        Label lblImage = new Label();
+        Label lblImage = new Label("");
         
         root.setTop(top);
         root.setBottom(bottom);
@@ -42,6 +45,17 @@ public class Lab02_AswinthSinnathamby extends Application {
         
         root.setCenter(middle);
         
+        
+        int min = 101;
+        int max = 120;
+        int random = (int) (Math.random() * (max - min + 1)) + min;
+        String path = "file:src/images/" + random + ".jpg";
+        Image image = new Image(path);
+        //Random rand = new Random();
+        //int imageNumber = rand.nextInt(20) + 101;
+        //String imagePath = "images/" + imageNumber + ".png";
+        //Image img = new Image(imagePath);
+        //lblImage.setGraphic(new ImageView(img));
         
         primaryStage.setScene(scene);
         primaryStage.setTitle("Java Games");
